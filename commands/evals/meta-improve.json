@@ -1,0 +1,20 @@
+{
+  "skill": "meta-improve",
+  "note": "Contract eval \u2014 static assertions on the /meta-improve skill's own text (no LLM run). Guards against skill-rot: if a refactor deletes an essential invariant, the gate fails.",
+  "cases": [
+    {
+      "name": "is the meta-improve skill (command name present)",
+      "must_contain": [
+        "/meta-improve"
+      ],
+      "must_not_contain": []
+    },
+    {
+      "name": "carries its essential domain invariant(s)",
+      "must_contain": [
+        "Meta-Improve Counter"
+      ],
+      "must_not_contain": []
+    }
+  ]
+}

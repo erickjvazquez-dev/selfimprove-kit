@@ -1,0 +1,11 @@
+{
+  "skill": "qa",
+  "note": "Contract eval — static assertions on the /qa skill's own text (no LLM run).",
+  "cases": [
+    {
+      "name": "drives real browser QA with vision across providers",
+      "must_contain": ["/qa", "Playwright", "vision", "provider"],
+      "must_not_contain": []
+    }
+  ]
+}

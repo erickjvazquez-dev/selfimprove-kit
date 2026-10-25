@@ -1,0 +1,89 @@
+# claude-code-framework — Claude Code Instructions
+
+## Project Overview
+
+**North Star:** A ready-to-load self-improvement kit that lets Claude Code or any CLI plan, build, verify, and ship any idea, tool, or app autonomously — and that keeps itself current: every month it re-checks its own skills, CLAUDE.md, and hooks against the latest Claude models and deletes, updates, upgrades, or adds whatever is needed so it performs at its best
+
+| Key | Value |
+|---|---|
+| Project | claude-code-framework |
+| Type | other |
+| Live URL |  |
+| GitHub | erickjvazquez-dev/selfimprove-kit |
+| Deploy | local |
+
+## Skills Available
+
+| Command | Purpose |
+|---|---|
+| `/self-improve` | Autonomous improvement loop — health, design, features |
+| `/qa` | Product QA orchestrator — tests the real product |
+| `/gap` | Gap detection — finds what's missing before you notice |
+| `/critical-checks` | Pre-commit safety audit |
+| `/speckit.specify` | Write spec before building |
+| `/speckit.plan` | Turn spec into ordered steps |
+| `/speckit.implement` | Execute steps with per-step commits |
+| `/speckit.checklist` | Verify acceptance criteria |
+| `/snapshot "label"` | Create named recovery point |
+| `/restore` | Branch off any snapshot |
+| `/rollback` | Safely revert last commit |
+| `/status` | Live environment inspector |
+| `/gap` | Technical lead gap detection |
+| `/lab` | Tiered contained sandbox — security probes, experiments, lab results |
+
+## Core Rules
+
+### Rule 1 — Safety before shipping
+Run `/critical-checks` before every commit. Fix all `[CRITICAL]` items. Never skip.
+
+### Rule 2 — Continuous product testing
+`/qa` runs continuously even without code changes. A green test suite ≠ working product.
+Verify the user experience, not just the HTTP status codes.
+
+### Rule 3 — Spec before building
+Any change touching >3 files OR adding a new user-facing flow needs a spec first (`/speckit.specify`).
+
+### Rule 4 — Surgical commits
+Each commit has one purpose. Every changed line traces to the user's request.
+Follow Conventional Commits: `type(scope): description`
+
+### Rule 5 — Full autonomy in loops
+`/self-improve` and `/qa` run fully autonomously. Never pause to ask for confirmation
+on: pushing commits, triggering CI, opening PRs, routine maintenance.
+
+### Rule 6 — Push before CI check
+Always push before checking CI status. Unpushed commits mean CI is testing stale code.
+
+### Rule 7 — Diagnose CI failures
+When CI fails, get `gh run view --log-failed`, find the root cause, fix it.
+Never just report the failure — diagnose and resolve.
+
+### Rule 8 — No speculative abstractions
+Build minimum code that solves the problem. No features beyond what was asked.
+Three similar lines is better than a premature abstraction.
+
+### Rule 9 — No comments on what code does
+Default to zero comments. Only add one when the WHY is non-obvious.
+Never add multi-line docstrings or reference the current task in comments.
+
+### Rule 10 — Gap detection is proactive
+Run `/gap` periodically — not just when something breaks. It finds what's missing
+before users notice.
+
+## Development Workflow (Spec-Kit)
+
+1. `/speckit.specify "feature"` — write spec first, always
+2. `/speckit.plan` — plan steps
+3. `/snapshot "before <feature>"` — checkpoint
+4. `/speckit.implement` — execute step by step
+5. `/speckit.checklist` — verify all acceptance criteria pass
+
+## Test Command
+```bash
+bash tests/run.sh
+```
+
+## Health Check
+```bash
+curl -sf /health
+```

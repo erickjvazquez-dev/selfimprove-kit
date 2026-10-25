@@ -1,0 +1,6 @@
+{
+  "gate": "skill-governance (per-skill contract eval)",
+  "widened": "2026-08-26",
+  "note": "Skills without a commands/evals/<skill>.json contract eval. 'skill has no eval = gap' (GAP-047). Empty: every skill now carries a contract eval (F17 backfill, 2026-08-26). Any NEW skill must ship with an eval or be grandfathered here.",
+  "accepted": []
+}

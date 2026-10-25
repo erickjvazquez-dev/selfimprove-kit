@@ -1,0 +1,20 @@
+{
+  "skill": "find-skill",
+  "note": "Contract eval \u2014 static assertions on the /find-skill skill's own text (no LLM run). Guards against skill-rot: if a refactor deletes an essential invariant, the gate fails.",
+  "cases": [
+    {
+      "name": "is the find-skill skill (command name present)",
+      "must_contain": [
+        "/find-skill"
+      ],
+      "must_not_contain": []
+    },
+    {
+      "name": "carries its essential domain invariant(s)",
+      "must_contain": [
+        "skill"
+      ],
+      "must_not_contain": []
+    }
+  ]
+}

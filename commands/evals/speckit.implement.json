@@ -1,0 +1,20 @@
+{
+  "skill": "speckit.implement",
+  "note": "Contract eval \u2014 static assertions on the /speckit.implement skill's own text (no LLM run). Guards against skill-rot: if a refactor deletes an essential invariant, the gate fails.",
+  "cases": [
+    {
+      "name": "is the speckit.implement skill (command name present)",
+      "must_contain": [
+        "/speckit.implement"
+      ],
+      "must_not_contain": []
+    },
+    {
+      "name": "carries its essential domain invariant(s)",
+      "must_contain": [
+        "commit"
+      ],
+      "must_not_contain": []
+    }
+  ]
+}

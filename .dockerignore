@@ -1,0 +1,15 @@
+.git
+.ccf
+scaffold/.ccf/project.env
+.venv-skillspector
+.venv
+venv
+__pycache__
+**/__pycache__
+*.py[cod]
+.pytest_cache
+.DS_Store
+**/.DS_Store
+*.log
+.vscode
+.idea

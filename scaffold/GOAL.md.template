@@ -1,0 +1,58 @@
+# {{CCF_PROJECT_NAME}} — Goals & Roadmap
+
+**North Star:** {{CCF_NORTH_STAR}}
+
+---
+
+## Blockers
+<!-- P0 items added here by /qa and /self-improve when critical bugs are found -->
+
+---
+
+## Now (current sprint)
+
+- [ ] Initial setup — configure CI/CD and deployment
+- [ ] Core feature: [describe your primary feature]
+- [ ] Health endpoint — returns status, version, uptime
+- [ ] Basic auth — protect non-public endpoints
+
+---
+
+## Next
+
+- [ ] Test coverage ≥ 80% on core modules
+- [ ] Error handling — friendly messages, no raw tracebacks
+- [ ] Mobile-responsive UI (if applicable)
+- [ ] Performance baseline — P95 < 500ms on primary endpoints
+
+---
+
+## Later
+
+- [ ] Observability — error tracking (Sentry), metrics
+- [ ] Documentation — README, API docs
+- [ ] Rate limiting / abuse protection
+- [ ] Analytics / usage tracking
+
+---
+
+## Pre-launch security (the 20-item bar — `/security-checklist` must be green before first deploy)
+<!-- P0 items block launch; check each off only when /security-checklist proves it. -->
+- [ ] SEC-01 Hide API keys · SEC-02 Purge git secrets · SEC-03 Restricted (non-admin) client DB key
+- [ ] SEC-04 Row-level security · SEC-05 Encrypt/hash sensitive data at rest · SEC-06 Server-side auth (constant-time)
+- [ ] SEC-07 Lock record access (no IDOR; unknown owner fails CLOSED) · SEC-08 Block field tampering
+- [ ] SEC-09 Secure session cookies (HttpOnly+Secure+SameSite) · SEC-10 Hash passwords · SEC-11 Rate-limit auth
+- [ ] SEC-12 Bot protection ENFORCED in prod (not dark-shipped) · SEC-13 Parameterize queries · SEC-14 Validate all input
+- [ ] SEC-15 Escape user content (no raw innerHTML) · SEC-16 Restrict file uploads · SEC-17 Trim API responses (no path/stack leak)
+- [ ] SEC-18 Security headers · SEC-19 Force HTTPS · SEC-20 Scan dependencies (SCA blocking on critical)
+
+---
+
+## MANDATORY RULE
+Any frontend change must be applied to ALL surfaces simultaneously.
+List your surfaces here: [landing, app, docs, etc.]
+
+---
+
+## Gaps Found
+<!-- /gap writes gap waves here — GW01, GW02, etc. -->

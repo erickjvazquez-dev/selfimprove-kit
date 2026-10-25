@@ -1,0 +1,34 @@
+{
+  "scanner": "skillspector 2.1.2 (static, --no-llm)",
+  "triaged": "2026-06-10",
+  "accepted": [
+    {
+      "key": "SC2@progress.md",
+      "note": "False positive: `curl | python3 -c` pipes remote JSON to a STATIC inline parser via stdin — remote data is never executed as code."
+    },
+    {
+      "key": "TM1@restore.md",
+      "note": "False positive: flagged line is the SAFETY section prohibiting `git reset --hard` — mention of a dangerous command inside a never-use rule, not usage."
+    },
+    {
+      "key": "TM1@rollback.md",
+      "note": "False positive: same as restore.md — the flagged text is the rule 'NEVER use git reset --hard / NEVER force-push'."
+    },
+    {
+      "key": "TM1@self-improve.md",
+      "note": "False positive: flagged on `rm ~/.claude/STOP_LOOPS` — clearing the stop-switch sentinel in the user's own ~/.claude dir, not a destructive/abusive path."
+    },
+    {
+      "key": "PE3@gap.md",
+      "note": "False positive (triaged 2026-08-13): `../../etc/passwd.csv` appears as an ADVERSARIAL TEST PAYLOAD inside the GAP-030 path-traversal rule (CWE-22) — a fixture the rule tells you to assert AGAINST, not a path the skill reads. Same class as the restore/rollback 'dangerous command inside a never-use rule' entries."
+    },
+    {
+      "key": "MP3@gap.md",
+      "note": "False positive (triaged 2026-08-13): flagged on the prose 'corrupt state' in the budget-infra-failure gap rule (fail-closed guidance) — descriptive text, no state manipulation."
+    },
+    {
+      "key": "PE3@lab.md",
+      "note": "False positive (triaged 2026-08-13): flagged on a COMMENT naming `.env` / `.ccf/project.env` as the config file to read key shapes from — a filename mention in an instruction comment, not secret access."
+    }
+  ]
+}

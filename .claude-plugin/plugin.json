@@ -1,0 +1,16 @@
+{
+  "name": "selfimprove-kit",
+  "description": "Drop-in self-improvement kit for any project type: autonomous improve loop, product QA, gap detection, spec-kit workflow, snapshots and safe recovery",
+  "author": {
+    "name": "Erick Vazquez"
+  },
+  "license": "MIT",
+  "keywords": [
+    "self-improve",
+    "qa",
+    "gap-detection",
+    "spec-kit",
+    "automation",
+    "workflow"
+  ]
+}

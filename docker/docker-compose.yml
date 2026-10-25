@@ -1,0 +1,47 @@
+# Claude Code Framework — full framework in a container.
+# The image bundles the whole repo (commands, agents, hooks, core, scaffold,
+# scripts, tests, setup.sh). Secrets/config come from .ccf/project.env at
+# runtime — never baked into the image (.dockerignore excludes .ccf).
+#
+# Usage (from this directory):
+#   docker compose run --rm framework      # interactive shell in the framework
+#   docker compose run --rm tests          # full self-test (bash tests/run.sh)
+#   docker compose run --rm health         # health check against CCF_LIVE_URL
+#   docker compose run --rm qa             # headless browser QA
+
+x-build: &build
+  build:
+    context: ..
+    dockerfile: docker/Dockerfile
+
+x-env: &env
+  env_file:
+    - path: ../.ccf/project.env
+      required: false
+  environment:
+    - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+
+services:
+  framework:
+    <<: [*build, *env]
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+    volumes:
+      - /tmp/ccf_qa:/tmp/ccf_qa_screenshots
+
+  # No *env: the self-test simulates a config-less project; injecting
+  # .ccf/project.env contaminates the statusline no-config assertion.
+  tests:
+    <<: *build
+    command: ["bash", "tests/run.sh"]
+
+  health:
+    <<: [*build, *env]
+    command: ["python3", "scripts/health_check.py"]
+
+  qa:
+    <<: [*build, *env]
+    command: ["python3", "scripts/qa_browser.py", "--headless", "--all-sites"]
+    volumes:
+      - /tmp/ccf_qa:/tmp/ccf_qa_screenshots

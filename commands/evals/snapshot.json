@@ -1,0 +1,30 @@
+{
+  "skill": "snapshot",
+  "note": "Contract eval \u2014 static assertions on the /snapshot skill's own text (no LLM run). Guards against skill-rot: if a refactor deletes an essential invariant, the gate fails.",
+  "cases": [
+    {
+      "name": "is the snapshot skill (command name present)",
+      "must_contain": [
+        "/snapshot"
+      ],
+      "must_not_contain": []
+    },
+    {
+      "name": "carries its essential domain invariant(s)",
+      "must_contain": [
+        "label"
+      ],
+      "must_not_contain": []
+    },
+    {
+      "name": "creates a snapshot/ tag in the project repo (no hardcoded user path)",
+      "must_contain": [
+        "git -C \"$REPO_DIR\" tag \"snapshot/"
+      ],
+      "must_not_contain": [
+        "/Users/",
+        "-Users-"
+      ]
+    }
+  ]
+}

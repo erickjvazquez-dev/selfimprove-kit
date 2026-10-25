@@ -1,0 +1,34 @@
+# Project env (contains secrets)
+.ccf/project.env
+scaffold/.ccf/project.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Screenshots / QA artifacts
+/tmp/
+*.png
+*.jpg
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+.venv-skillspector/
+

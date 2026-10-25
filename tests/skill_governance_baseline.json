@@ -1,0 +1,6 @@
+{
+  "gate": "skill-governance (frontmatter description)",
+  "widened": "2026-08-26",
+  "note": "Pre-governance skills lacking a YAML frontmatter `description`. Empty: every skill now declares a description (backfill 2026-08-26). Any NEW skill must ship with one or be grandfathered here (shrink-only ratchet).",
+  "accepted": []
+}

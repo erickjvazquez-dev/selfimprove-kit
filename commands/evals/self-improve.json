@@ -1,0 +1,16 @@
+{
+  "skill": "self-improve",
+  "note": "Contract eval — static assertions on the generic self-improve loop's own text (no LLM run). The must_not_contain cases enforce that the GENERIC loop stays project-agnostic (no project-specific hardcodes).",
+  "cases": [
+    {
+      "name": "honors the stop-switch and the config-driven test command",
+      "must_contain": ["STOP_LOOPS", "CCF_TEST_CMD", "ScheduleWakeup"],
+      "must_not_contain": []
+    },
+    {
+      "name": "stays project-agnostic (no project hardcodes)",
+      "must_contain": [],
+      "must_not_contain": ["/Users/", "up.railway.app"]
+    }
+  ]
+}

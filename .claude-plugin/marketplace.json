@@ -1,0 +1,29 @@
+{
+  "name": "selfimprove-kit",
+  "owner": {
+    "name": "Erick Vazquez"
+  },
+  "metadata": {
+    "description": "Single-plugin marketplace for the Claude Code Framework self-improvement kit",
+    "version": "1.2.0"
+  },
+  "plugins": [
+    {
+      "name": "selfimprove-kit",
+      "source": "./",
+      "description": "Drop-in self-improvement kit for any project type: autonomous improve loop, product QA, gap detection, spec-kit workflow, snapshots and safe recovery",
+      "author": {
+        "name": "Erick Vazquez"
+      },
+      "keywords": [
+        "self-improve",
+        "qa",
+        "gap-detection",
+        "spec-kit",
+        "automation",
+        "workflow"
+      ],
+      "category": "workflow"
+    }
+  ]
+}

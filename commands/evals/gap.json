@@ -1,0 +1,16 @@
+{
+  "skill": "gap",
+  "note": "Contract eval — static assertions on the /gap skill's own text (no LLM run). Guards against skill-rot: if a refactor deletes an essential invariant, the gate fails.",
+  "cases": [
+    {
+      "name": "is the gap-detection orchestrator",
+      "must_contain": ["/gap", "Technical Lead"],
+      "must_not_contain": []
+    },
+    {
+      "name": "carries the numbered GAP rule registry",
+      "must_contain": ["GAP-001", "GAP-046"],
+      "must_not_contain": []
+    }
+  ]
+}
